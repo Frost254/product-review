@@ -3,6 +3,7 @@
 puts "Deleting old data..."
 Product.destroy_all
 User.destroy_all
+Review.destroy_all
 
 puts "Creating users..."
 user1 = User.create(name: Faker::Name.name)
@@ -22,5 +23,8 @@ puts "Creating reviews..."
 # * and a review belongs to an user.                              *
 # *****************************************************************
 # Create Reviews Here
+review1 = Review.create(star_rating: 8, comment: "Absolutely amazing")
+review2 = Review.create(star_rating: 2, comment: "Absolutely bad")
+review3 = Review.create(star_rating: 6, comment: "Not bad")
 
 puts "Seeding done!"
