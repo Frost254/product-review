@@ -2,14 +2,6 @@ class Product < ActiveRecord::Base
     has_many :reviews
     has_many :users, through: :reviews
 
-    def reviews
-        self.product.reviews
-    end
-
-    def users
-        self.product.users
-    end
-
     def leave_review(user, rating, comment)
         review = Review.create(star_rating: rating, comment: comment, user: user)
     end

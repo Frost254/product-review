@@ -23,8 +23,11 @@ puts "Creating reviews..."
 # * and a review belongs to an user.                              *
 # *****************************************************************
 # Create Reviews Here
-review1 = Review.create(star_rating: 8, comment: "Absolutely amazing")
-review2 = Review.create(star_rating: 2, comment: "Absolutely bad")
-review3 = Review.create(star_rating: 6, comment: "Not bad")
+review1 = Review.create(star_rating: 8, comment: "Absolutely amazing", product_id: product1.id, user_id: user1.id)
+review2 = Review.create(star_rating: 2, comment: "Absolutely bad", product_id: product2.id, user_id: user2.id)
+review3 = Review.create(star_rating: 6, comment: "Not bad", product_id: product3.id, user_id: user3.id)
+review4 = Review.create(star_rating: 10, comment: "Perfection", product_id: product1.id, user_id: user3.id)
+review5 = Review.create(star_rating: 2, comment: "Really bad", product_id: product3.id, user_id: user1.id)
+review6 = Review.create(star_rating: 6, comment: "Not bad", product_id: product1.id, user_id: user2.id)
 
 puts "Seeding done!"
