@@ -3,10 +3,11 @@ class User < ActiveRecord::Base
    has_many :products, through: :reviews
 
    def favorite_product
+      self.products.order("star_rating").last
    end
 
    def remove_reviews(product)
-      self.reviews.destroy_all where product
+      self.reviews.where(product: product).destroy_all
    end
 
 end
