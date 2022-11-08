@@ -14,4 +14,11 @@ class User < ActiveRecord::Base
       self.products
    end
 
+   def favorite_product
+   end
+
+   def remove_reviews(product)
+      self.reviews.destroy_all where product
+   end
+
 end
